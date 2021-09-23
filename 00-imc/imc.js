@@ -1,4 +1,8 @@
-/* todas as variáveis serão usadas pela única função 'imc', portanto, elas devem ser posicionadas dentro da função (variáveis locais). */
+/* todas as variáveis serão usadas somente função 'imc', portanto, elas devem ser posicionadas dentro da função (variáveis locais). */
+
+/* const: cria uma variável de valor fixo (constante somente de leitura. assim, ela não pode ser alterada ou atribuída). */
+
+/* getElementById: pega o conteúdo da id. */
 
 const calcular = document.getElementById('calcular');    /* pega o conteúdo id="calcular" */
 
@@ -8,10 +12,11 @@ function imc () {
     const peso = document.getElementById('peso').value;       /* pega o valor id="peso"         */
     const resultado = document.getElementById('resultado');   /* pega o conteúdo id="resultado" */
 
+
     if ((nome !== '') && (altura !== '') && (peso !== '')) {   /* Verificação - campos preenchidos */
-        const valorIMC = (peso / (altura*altura)).toFixed(1);  /* .toFixed(2): resultado com 1 casas decimal */
+        const valorIMC = (peso / (altura*altura)).toFixed(1);  /* .toFixed(1): resultado com 1 casas decimal */
         
-        let classificacao = '';
+        let classificacao = ''; /* let: declarava uma variável local no escopo atual, opcionalmente iniciando-a com um valor. */
         
         if (valorIMC < 18.5) {
             classificacao = 'abaixo do peso.';
@@ -41,7 +46,7 @@ function imc () {
     } 
     
     else {
-        resultado.textContent = 'Preencha todos os campos.';   /* textContent usa o conteúdo de dentro da div */
+        alert('Preencha todos os campos.');  /* textContent usa o conteúdo de dentro da div */
     }
 }
 

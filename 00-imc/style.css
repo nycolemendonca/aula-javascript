@@ -135,4 +135,16 @@ button {
 
 /* Media Queries */
 
-@media (max-width: )
+@media (max-width: 1024px) {
+    .container {
+        width: 90%;
+        display: flexbox;
+    }
+}
+
+@media (max-width: 470px) {
+    main {
+      max-width: 90%;
+      display: flexbox;
+    }
+}
